@@ -71,11 +71,6 @@ entry2_label.pack(padx=20, pady=20)
 entry2 = tk.Entry(root)
 entry2.pack()
 
-entry1.bind("<Return>", calculate_electronegativity)
-entry1.bind("<KP_Enter>", calculate_electronegativity)
-entry2.bind("<Return>", calculate_electronegativity)
-entry2.bind("<KP_Enter>", calculate_electronegativity)
-
 calculate_button = tk.Button(root, text="Calculate Electronegativity", command=calculate_electronegativity, font=(20))
 calculate_button.pack(padx=20, pady=20)
 
