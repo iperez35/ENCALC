@@ -1,6 +1,7 @@
 import tkinter as tk
 import time
 
+
 def calculate_electronegativity():
     value1 = entry1.get().strip()
     value2 = entry2.get().strip()
@@ -14,12 +15,12 @@ def calculate_electronegativity():
         'beryllium': 1.57,
         'boron': 2.04,
         'carbon': 2.55,
-        'nitrogen': 3.04,
-        'oxygen': 3.44
-
+        'nitrogen': 3.04, 
+        'oxygen': 3.44,
+        'fluorine': 3.98,
     }
 
-    time.sleep(3)
+    time.sleep(1)
 
     # Initialize electronegativity values
     element1_value = None
@@ -44,6 +45,9 @@ def calculate_electronegativity():
         # Classify based on electro_value
         if electro_value > 3.21:
             classification_label.config(text="That's not a possible value", font=20)
+
+        elif abs(electro_value - 1.78) < 0.01:
+            classification_label.config(text="The bond between these two elements is highly Polar Covalent. Despite being above 1.7, there is not a complete transfer of electrons, hence the molecule is Polar Covalent, rather than Ionic.", font=20, wraplength=475)
 
         elif electro_value >= 0.5 and electro_value <= 1.7:
             classification_label.config(text="The bond between these two elements is Polar Covalent", font=20)
@@ -75,10 +79,10 @@ entry2_label.pack(padx=20, pady=20)
 entry2 = tk.Entry(root)
 entry2.pack()
 
-calculate_button = tk.Button(root, text="Calculate Electronegativity", command=calculate_electronegativity, font=(20))
+calculate_button = tk.Button(root, text="∆EN", command=calculate_electronegativity)
 calculate_button.pack(padx=20, pady=20)
 
-result_label = tk.Label(root, text="")
+result_label = tk.Label(root, text="----------------------------------")
 result_label.pack()
 
 classification_label = tk.Label(root, text="")
