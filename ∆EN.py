@@ -19,6 +19,8 @@ def calculate_electronegativity():
 
     }
 
+    time.sleep(3)
+
     # Initialize electronegativity values
     element1_value = None
     element2_value = None
